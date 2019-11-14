@@ -1,0 +1,54 @@
+
+
+body, p, input, button, textarea { font-family:$montserrat}
+h1,h2,h3,h4,h5,h6, strong {font-family:$montserrat}  
+// a {color:$white;}
+p, input, textarea, button, a, li, label { font-size:1.8rem; line-height:1.4;} 
+
+/* Assign Font Properties - END */
+
+html{font-size:62.5%;}
+body{font-family:$montserrat;  overflow:hidden;}
+
+*{	
+    margin: 0; padding: 0; outline: none; list-style:none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border:none; 
+    @include border-radius(0);
+    @include box-sizing(border-box);
+	-ms-text-size-adjust: 100%;
+	-webkit-font-smoothing:antialiased;
+}
+
+a {text-decoration: none; outline:none}
+a:hover{ text-decoration:none;}
+img { border: none; max-width: 100%; vertical-align: top; border:none} 
+html{width:100%; overflow-x:hidden; -webkit-text-size-adjust:100%;}
+
+p,.ul,h1,h2,h3,h4,h5,h6 { padding-bottom:5px;}
+
+h1,h2,h3,h4,h5,h6 {line-height: 1;}
+h1 {font-size:5rem;}
+h2 {font-size:3.3rem; font-weight: normal;}
+h3 {font-size:2rem;}
+
+h3 a, h4 a, h5 a, h6 a{font-size:inherit; text-decoration:underline;}
+table,table tr td, table tr th{border:none}
+table {	border-collapse: collapse;	border-spacing: 0;}
+
+input,textarea{outline:none}
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,section,summary, mark { float:left; width:100%;}
+.fl {float:left !important;}
+.fr {float:right !important;}
+
+input[type=submit], input[type=button], button[type=submit]{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor: pointer;
+    outline: none;
+}
+
+
+

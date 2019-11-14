@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'Gill Sans BoldExtraCondensed';
+  src: url("GillSans-BoldExtraCondensed.eot");
+  src: url("GillSans-BoldExtraCondensed.eot?#iefix") format("embedded-opentype"), url("GillSans-BoldExtraCondensed.woff2") format("woff2"), url("GillSans-BoldExtraCondensed.woff") format("woff"), url("GillSans-BoldExtraCondensed.ttf") format("truetype"), url("GillSans-BoldExtraCondensed.svg#GillSans-BoldExtraCondensed") format("svg");
+  font-weight: bold;
+  font-style: normal; }
