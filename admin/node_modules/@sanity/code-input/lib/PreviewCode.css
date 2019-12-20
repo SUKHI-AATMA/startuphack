@@ -1,0 +1,25 @@
+.root {
+  position: relative;
+
+  @nest & > h3 {
+    padding-left: 0.75rem;
+  }
+}
+
+.aceWrapper {
+  border-top: 1px solid #ccc;
+  box-sizing: border-box;
+  cursor: default;
+  background-color: #272822;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+.aceWrapper :global(.ace_content) {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.defaultPreviewContainer {
+  padding: 0.2em;
+}
