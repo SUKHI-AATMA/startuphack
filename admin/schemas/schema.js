@@ -5,6 +5,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 import news from './news'
+import author from './author'
 import blockContent from './blockContent'
 import blockContentForSocial from './blockContentForSocial'
 import youtube from './youtube'
@@ -19,6 +20,7 @@ export default createSchema({
   types: schemaTypes.concat([
     /* Your types here! */
     news,
+    author,
     blockContent,
     blockContentForSocial,
     youtube,

@@ -4,9 +4,19 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'postTitle',
-      title: 'Post Title',
+      name: 'metaTitle',
+      title: 'Meta Title',
       type: 'string'
+    },
+    {
+      name: 'metaDescription',
+      title: 'Meta Description',
+      type: 'text'
+    },
+    {
+      name: 'metaImage',
+      title: 'Meta Image',
+      type: 'image'
     },
     {
       name: 'image',
@@ -27,21 +37,7 @@ export default {
         layout: 'dropdown'
       }
     },
-    {
-      name: 'metaTitle',
-      title: 'Meta Title',
-      type: 'string'
-    },
-    {
-      name: 'metaDescription',
-      title: 'Meta Description',
-      type: 'text'
-    },
-    {
-      name: 'metaImage',
-      title: 'Meta Image',
-      type: 'image'
-    },
+    
     {
       name: 'newsTitle',
       title: 'Title',
@@ -50,7 +46,12 @@ export default {
     {
       name: 'author',
       title: 'Author',
-      type: 'string'
+      type: 'reference',
+      to: [
+        {
+          type: 'author'
+        }
+      ]
     },
     {
       name: 'publishedDate',
@@ -59,23 +60,13 @@ export default {
     },
     {
       name: 'externalLink',
-      title: 'External Link',
+      title: 'Source',
       type: 'string'
     },
     {
       name: 'bodyCopy',
       title: 'Body Copy',
       type: 'blockContent'
-    },
-    {
-      name: 'twitterEmbedCode',
-      title: 'Embed Twitter',
-      type: 'blockContentForSocial'
-    },
-    {
-      name: 'instagramEmbedCode',
-      title: 'Embed Instagram',
-      type: 'blockContentForSocial'
     }
   ]
 }

@@ -74,7 +74,7 @@ export default {
       ]
     },
     {
-      type: 'code'
+      type: 'code',
     },
     {
       type: 'youtube'
