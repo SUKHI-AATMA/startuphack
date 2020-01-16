@@ -1,0 +1,36 @@
+{
+  "root": true,
+  "project": {
+    "name": "startuphack-cms"
+  },
+  "api": {
+    "projectId": "78nd8rko",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "@sanity/code-input",
+    "@sanity/production-preview"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema.js"
+    },
+    {
+      "implements": "part:@sanity/production-preview/resolve-production-url",
+      "path": "./resolveProductionUrl.js"
+    }
+  ]
+}
