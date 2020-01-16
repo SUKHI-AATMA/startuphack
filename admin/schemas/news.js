@@ -9,6 +9,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'metaDescription_1',
+      title: 'Meta Description 1',
+      type: 'text'
+    },
+    {
       name: 'metaDescription',
       title: 'Meta Description',
       type: 'text'
