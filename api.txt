@@ -1,0 +1,5 @@
+
+
+https:78nd8rko.api.sanity.io/v1/<path>
+
+https://78nd8rko.api.sanity.io/v1/data/query/production?query=*[0]
