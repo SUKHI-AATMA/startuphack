@@ -1,0 +1,20 @@
+{
+  "name": "startuphack",
+  "version": "0.0.1",
+  "description": "",
+  // "main": "index.js",
+  "scripts": {
+    "build": "node ./js/scripts/build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npm-git-install": "^0.3.0"
+  },
+  "devDependencies": {
+    "fs-extra": "^5.0.0",
+    "request": "^2.88.0",
+    // "simple-git": "^1.126.0"
+  }
+}
