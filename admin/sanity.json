@@ -1,7 +1,8 @@
 {
   "root": true,
   "project": {
-    "name": "startuphack-cms"
+    "name": "startuphack-cms",
+    "basePath": "/admin/dist/"
   },
   "api": {
     "projectId": "78nd8rko",
