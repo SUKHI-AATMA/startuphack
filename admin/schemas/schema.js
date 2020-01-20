@@ -12,6 +12,8 @@ import youtube from './youtube'
 import socialEmbed from './social-embed'
 import blockContentForImageVideo from './blockContentForImageVideo'
 import multiImageDimension from './multiImageDimension'
+import blockContentForMultiDimensionImage from './blockContentForMultiDimensionImage'
+
 
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -29,6 +31,7 @@ export default createSchema({
     youtube,
     socialEmbed,
     blockContentForImageVideo,
-    multiImageDimension
+    multiImageDimension,
+    blockContentForMultiDimensionImage
   ])
 })

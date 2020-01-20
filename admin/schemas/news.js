@@ -9,9 +9,9 @@ export default {
       type: 'string'
     },
     {
-      name: 'metaDescription_1',
-      title: 'Meta Description 1',
-      type: 'text'
+      name: 'banner_image',
+      title: 'Banner Image',
+      type: 'blockContentForMultiDimensionImage'
     },
     {
       name: 'metaDescription',
