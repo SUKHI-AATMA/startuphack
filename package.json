@@ -1,6 +1,6 @@
 {
   "name": "startuphack",
-  "version": "0.0.1",
+  // "version": "0.0.1",
   "description": "",
   "scripts": {
     "build": "node ./js/scripts/build"
@@ -8,9 +8,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "npm-git-install": "^0.3.0"
-  },
   "devDependencies": {
     "fs-extra": "^5.0.0",
     "request": "^2.88.0"
