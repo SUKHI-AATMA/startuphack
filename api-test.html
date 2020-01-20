@@ -1,0 +1,6 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+	$.getJSON( 'https://78nd8rko.api.sanity.io/v1/data/query/production?query=*[_type == "news"]', function( data ) {
+		console.log(data);
+	});
+</script>

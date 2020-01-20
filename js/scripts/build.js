@@ -62,6 +62,7 @@ fse.emptyDirSync(distPath);
 //Meta Data
 request({
     url: api,
+    auth: 'skDDwzoijShoNda8N1faUBHHbUGhiNGSt3fsC9W6DjrKDnw8SSZ9eIkgsNr7YdR6OVaH9yhmPYwTxytrjFgwbrGJrNpNdtjQ1aT1SLzef8njB3ZbyLXFzDQZtAJGmFDQLDDEhoFbZAPoI8yPzmfZuLyppkRPKc8iRd4oNQKi27sRfoDnNJEc',
     json: true
 }, function(error, response, body) {
     flag = flag + 1;
