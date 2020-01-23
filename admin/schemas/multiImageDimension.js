@@ -19,9 +19,9 @@ const previewImage = ({value})  => {
   
   return (
     <div>
-    <img src={imageDimension_Big} alt="" />
-    <img src={imageDimension_Med} alt="" />
-    <img src={imageDimension_Small} alt="" />
+    <img src={imageDimension_Big} alt="" style={{width: "100%"}} />
+    <img src={imageDimension_Med} alt="" style={{width: "50%"}} />
+    <img src={imageDimension_Small} alt="" style={{width: "25%"}} />
     </div>
   );
 };
