@@ -57,27 +57,27 @@ request({
 }, function(error, response, body) {
     if (!error && response.statusCode === 200) {
         var jsonDataList = body.result;
-        // console.log(jsonDataList);
         jsonDataList.forEach((jsonData, i) => {
-            // authorRef = jsonData.author._ref;
-            // if (jsonData._type == 'author' && ) {
-            //     author = jsonData.name;
-            // }
+            var nTitle = '';
             if (jsonData._type == 'news') {
                 var mtImg = '';
                 var metaImg = jsonData.metaImage.asset;
                 if (metaImg) {
                     mtImg = metaImg._ref;
                 }
-                var newsTi = jsonData.newsTitle.children;
-                console.log(jsonData.newsTitle);
-                // newsTi.forEach((nt, i) => {
-                //     if(nt.text)
-                //     {
-                //         console.log(nt.text);
-                //     }
-                // });
-                console.log(newsTi);
+                var newsTi = jsonData.newsTitle[0].children;
+                for(i=0; i<= newsTi.length; i++)
+                {
+                    var newsTiArr = newsTi;
+                    for(j=0; j<= newsTiArr.length-1; j++)
+                    {
+                        if(newsTiArr[j].text !== '')
+                        {
+                            nTitle = newsTiArr[j].text;
+                            pageName = nTitle.replace(/\s+/g, '-').toLowerCase()
+                        }
+                    }
+                }
                 detailsPage += `
                     <!DOCTYPE html>
                     <html lang="en">
@@ -132,7 +132,7 @@ request({
                                         </div>
                                     </div>
                                     <div class="content">
-                                        <h1 class="title"></h1>
+                                        <h1 class="title">`+nTitle+`</h1>
                                         <h2 class="subtitle">The next generation Chevrolet Corvette is 66 years in the making.</h2>
                                         <p class="authorName">By:
                                             <span>`+author+`</span>
@@ -174,7 +174,7 @@ request({
                 `;
 
                 // detailsPage = jsonData[0];    
-                fse.writeFileSync(`news/123.html`, detailsPage);
+                fse.writeFileSync(`news/`+pageName+`.html`, detailsPage);
             }
 
 

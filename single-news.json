@@ -1,0 +1,116 @@
+    {
+        "_createdAt": "2020-01-16T14:11:12Z",
+        "_id": "581b0646-3c74-49fc-84d4-5a737b1f981a",
+        "_rev": "6VDMzahWjeRMdAEGjy1QsQ",
+        "_type": "news",
+        "_updatedAt": "2020-01-17T13:39:48Z",
+        "author":
+        {
+            "_ref": "93ab3dba-5535-4104-a6d5-f99ab539e16f",
+            "_type": "reference"
+        },
+        "bannerStyle": "full-column",
+        "bodyCopy": [
+        {
+            "_key": "c03c56fa53af",
+            "_type": "block",
+            "children": [
+            {
+                "_key": "c03c56fa53af0",
+                "_type": "span",
+                "marks": [],
+                "text": "Tenisha was diagnosed with Polycystic Ovary Syndrome (PCOS) at just seventeen years old. She was told that she was probably going to be miserable, struggle to get pregnant and should lose some weight if she wanted to get close to living a happy, normal life."
+            }],
+            "markDefs": [],
+            "style": "normal"
+        },
+        {
+            "_key": "6c65966ea9b5",
+            "_type": "block",
+            "children": [
+            {
+                "_key": "6c65966ea9b50",
+                "_type": "span",
+                "marks": [],
+                "text": "After using \"Dr. Google\" and finding dozens of stories from other women struggling with PCOS she decided that she could make a difference."
+            }],
+            "markDefs": [],
+            "style": "normal"
+        },
+        {
+            "_key": "c0b67b24c20f",
+            "_type": "block",
+            "children": [
+            {
+                "_key": "c0b67b24c20f0",
+                "_type": "span",
+                "marks": [],
+                "text": "A couple of years later, Tenisha had the opportunity to complete a project as part of her qualification. She doubled down on this by joining Audacious and creating PCOS Fit. A health programme specifically for women with PCOS."
+            }],
+            "markDefs": [],
+            "style": "normal"
+        },
+        {
+            "_key": "0194a5e0a396",
+            "_type": "block",
+            "children": [
+            {
+                "_key": "0194a5e0a3960",
+                "_type": "span",
+                "marks": [],
+                "text": "On the podcast we discussed PCOS, her journey so far and how she plans on bringing PCOS to more women around the world."
+            }],
+            "markDefs": [],
+            "style": "normal"
+        }],
+        "externalLink": "https://www.startupdunedin.nz",
+        "image": [
+        {
+            "_key": "f012ad088939",
+            "_type": "youtube",
+            "url": "https://www.youtube.com/embed/Vp7CSx-OFgs"
+        }],
+        "metaDescription": "Tenisha was diagnosed with Polycystic Ovary Syndrome (PCOS) at just seventeen years old. She was told that she was probably going to be miserable, struggle to get pregnant and should lose some weight if she wanted to get close to living a happy, normal life.",
+        "metaImage":
+        {
+            "_type": "image",
+            "asset":
+            {
+                "_ref": "image-e394672cf44f16aab6786dfec20ce96d28004a87-750x422-jpg",
+                "_type": "reference"
+            }
+        },
+        "metaTitle": "The Audacious Student Empowering Women",
+        "newsTitle": [
+        {
+            "_key": "8c92ebef470c",
+            "_type": "block",
+            "children": [
+            {
+                "_key": "8c92ebef470c0",
+                "_type": "span",
+                "marks": [],
+                "text": ""
+            },
+            {
+                "_key": "8c92ebef470c1",
+                "_type": "span",
+                "marks": ["2a2046ee1df5"],
+                "text": "The Audacious Student Empowering Women"
+            },
+            {
+                "_key": "8c92ebef470c2",
+                "_type": "span",
+                "marks": [],
+                "text": ""
+            }],
+            "markDefs": [
+            {
+                "_key": "2a2046ee1df5",
+                "_type": "link",
+                "href": "https://www.startupdunedin.nz/blog/2019/11/13/the-audacious-student-empowering-women-startup-dunedin-podcast-011"
+            }],
+            "style": "h1"
+        }],
+        "publishedDate": "2020-01-16"
+    }
