@@ -9,11 +9,6 @@ export default {
       type: 'string'
     },
     {
-      name: 'banner_image',
-      title: 'Banner Image',
-      type: 'blockContentForMultiDimensionImage'
-    },
-    {
       name: 'metaDescription',
       title: 'Meta Description',
       type: 'text'
@@ -26,6 +21,11 @@ export default {
         accept: '.png,.jpg,.gif,.jpeg'
       }
     },
+    // {
+    //   name: 'banner_image',
+    //   title: 'Banner Image',
+    //   type: 'blockContentForMultiDimensionImage'
+    // },
     {
       name: 'image',
       title: 'Banner',

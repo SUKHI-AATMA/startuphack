@@ -19,9 +19,15 @@ const previewImage = ({value})  => {
   
   return (
     <div>
+<<<<<<< HEAD
     <img src={imageDimension_Big} alt="" style={{width: '100%', display: 'block', marginBottom: '10px'}} />
     <img src={imageDimension_Med} alt="" style={{width: '50%', display: 'block', marginBottom: '10px'}} />
     <img src={imageDimension_Small} alt="" style={{width: '30%', display: 'block', marginBottom: '10px'}} />
+=======
+    <img src={imageDimension_Big} alt="" style={{width: "100%"}} />
+    <img src={imageDimension_Med} alt="" style={{width: "50%"}} />
+    <img src={imageDimension_Small} alt="" style={{width: "25%"}} />
+>>>>>>> 515940f1807b4ea8fb2febc615b985c81612bf04
     </div>
   );
 };
