@@ -59,7 +59,8 @@ request({
         var jsonDataList = body.result;
         jsonDataList.forEach((jsonData, i) => {
             var nTitle = '';
-            if (jsonData._type == 'news') {
+            if (jsonData._type == 'news' && jsonData._id == 'tF2nE5KHgXGw36UJOTyUUx') {
+                var pageContent = '';
                 var mtImg = '';
                 var metaImg = jsonData.metaImage.asset;
                 if (metaImg) {
@@ -77,6 +78,82 @@ request({
                             pageName = nTitle.replace(/\s+/g, '-').toLowerCase()
                         }
                     }
+                }
+                var marks = [
+                    "code",
+                    "strong",
+                    "em",
+                    "underline",
+                    "strike-through"
+                ]
+                for(var bc = 0; bc <= jsonData.bodyCopy.length-1; bc++)
+                {
+                    var bcc = '';
+                    var bcctxt = '';
+                    if(jsonData.bodyCopy[bc].children)
+                    {
+                        bcc = jsonData.bodyCopy[bc].children;   
+                        bcctxt = bcc;
+                    }
+                    if(jsonData.bodyCopy[bc].asset)
+                    {
+                        bcc = jsonData.bodyCopy[bc].asset;
+                    }
+                    // console.log('----------')
+                    // console.log(bcctxt)
+                    // console.log('----------')
+                    if(jsonData.bodyCopy[bc]._type == 'block')
+                    {
+                        if(bcc)
+                        {
+                            if(bcctxt.text != '')
+                            {
+                                pageContent += '<p>';
+                                if(bcctxt.length>0)
+                                {
+                                    for (var bcctxtL = 0; bcctxtL <= bcctxt.length - 1; bcctxtL++) {
+                                        if(bcctxt[bcctxtL].marks)
+                                        {
+                                            if(bcctxt[bcctxtL].marks.length == 0)
+                                            {
+                                                // console.log(1234);
+                                                pageContent += bcctxt[bcctxtL].text;
+                                            }
+                                            if(bcctxt[bcctxtL].marks.length != 0)
+                                            {
+                                                // console.log(123456789);
+                                                // pageContent += '<span class="'+bcctxt[bcctxtL].marks[mk]+'+">'+ bcctxt[bcctxtL].text+'</span>';
+                                                var marksClasses = '';
+                                                for(var mk = 0; mk <= bcctxt[bcctxtL].marks.length-1; mk++)
+                                                {
+                                                    if(!marks.includes(marks) )
+                                                    {
+                                                        // console.log(1243);
+                                                        marksClasses += bcctxt[bcctxtL].marks[mk] + ' ';
+                                                        // pageContent += '<span class="'+bcctxt[bcctxtL].marks[mk]+'+">'+ bcctxt[bcctxtL].text+'</span>';
+                                                    }
+                                                }
+                                                pageContent += '<span class="'+marksClasses+'">'+ bcctxt[bcctxtL].text+'</span>';
+                                            }
+                                        }
+                                        // console.log();
+                                    }
+                                }
+                                pageContent += '</p>'
+                                // console.log('-------------------------');
+                                // console.log(pageContent);
+                            }
+                        }
+                    }
+                    if(jsonData.bodyCopy[bc]._type == 'image')
+                    {
+                        if(bcc)
+                        {
+                            // console.log(123)
+                            pageContent += '<img src="'+bcc._ref+'" alt="">';
+                        }
+                    }
+                    console.log(pageContent);
                 }
                 detailsPage += `
                     <!DOCTYPE html>
@@ -137,28 +214,10 @@ request({
                                         <p class="authorName">By:
                                             <span>`+author+`</span>
                                         </p>
-                                        <p class="articleDate">July 19, 2019, 4:20 PM GMT+5:30</p>
+                                        <p class="articleDate">`+jsonData.publishedDate+`</p>
                                         <div class="articleContent">
-                                            <p>Ever since the 1950s, Chevrolet’s Corvette has charmed generations of sports-car enthusiasts and
-                                                given General Motors Co. a chunk of the <a href="javascript:;">lucrative market</a> segment. Now the classic vehicle is
-                                                getting a makeover for the modern era: The stick shift is gone, and a touch screen and an 8-speed
-                                                automatic transmission are in.
-                                                <br>
-                                                <br> While each evolution of what’s known as “America’s sports car” has brought something new to
-                                                the game, the latest <a href="javascript:;">incarnation</a> represents the most radical change to date. The engine has been
-                                                moved to the middle of the car, behind the driver, who sits almost on top of the front axle.
-                                                That gives the car a more aggressive look, better balance and improved handling.
-                                                <br>
-                                                <br> It remains to be seen whether the new Corvette will appeal to older, core buyers, while also
-                                                attracting new fans and wealthy sports-car buffs who currently drive Ferraris and Lamborghinis.
-                                                One thing that hasn’t been compromised is speed: The Stingray gets a horsepower boost to 495
-                                                from 460. With a performance package, the car will hit 60 miles per hour in under 3 seconds.</p>
-                                            <ul>
-                                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</li>
-                                                <li>Lorem ipsum dolor sit amet, consectetur</li>
-                                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</li>
-                                            </ul>
+                                            `+pageContent+`
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -175,6 +234,7 @@ request({
 
                 // detailsPage = jsonData[0];    
                 fse.writeFileSync(`news/`+pageName+`.html`, detailsPage);
+                detailsPage = ''
             }
 
 
