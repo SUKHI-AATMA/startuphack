@@ -38,7 +38,7 @@ var today = new Date(),
             </div>
 
         </header>`,
-    footer = `<foooter></foooter>`,
+    footer = `<footer></footer>`,
     pageName = '',
     author = '',
     indexPage = '',
@@ -203,7 +203,8 @@ request({
                 }
                 indexPage += ``
 
-                // indexPage = jsonData[0];    
+                // indexPage = jsonData[0];
+                console.log(jsonData);
                 fse.writeFileSync(`news/index.html`, indexPage);
             }
 

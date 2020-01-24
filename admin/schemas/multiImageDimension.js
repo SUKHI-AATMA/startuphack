@@ -19,9 +19,9 @@ const previewImage = ({value})  => {
   
   return (
     <div>
-    <img src={imageDimension_Big} alt="" />
-    <img src={imageDimension_Med} alt="" />
-    <img src={imageDimension_Small} alt="" />
+    <img src={imageDimension_Big} alt="" style={{width: '100%', display: 'block', marginBottom: '10px'}} />
+    <img src={imageDimension_Med} alt="" style={{width: '50%', display: 'block', marginBottom: '10px'}} />
+    <img src={imageDimension_Small} alt="" style={{width: '30%', display: 'block', marginBottom: '10px'}} />
     </div>
   );
 };
@@ -38,9 +38,9 @@ export default {
         }
     ],
     preview: {
-        select: {
-          file: 'url',
-        },
-        component: previewImage
-      }
+      select: {
+        file: 'url',
+      },
+      component: previewImage
+    }
 }

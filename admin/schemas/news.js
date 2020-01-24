@@ -31,11 +31,7 @@ export default {
       title: 'Banner',
       type: 'blockContentForImageVideo'
     },
-    {
-      name: 'externalLink',
-      title: 'Source',
-      type: 'string'
-    },
+    
     {
       name: 'bannerStyle',
       title: 'Banner Style',
@@ -50,7 +46,6 @@ export default {
         layout: 'dropdown'
       }
     },
-    
     {
       name: 'newsTitle',
       title: 'Title',
@@ -70,6 +65,11 @@ export default {
       name: 'publishedDate',
       title: 'Published Date',
       type: 'date'
+    },
+    {
+      name: 'externalLink',
+      title: 'Source',
+      type: 'string'
     },
     {
       name: 'bodyCopy',
