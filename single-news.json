@@ -1,9 +1,9 @@
     {
         "_createdAt": "2020-01-17T13:40:15Z",
         "_id": "tF2nE5KHgXGw36UJOTyUUx",
-        "_rev": "V45hCX6765vIJJrImKxqxl",
+        "_rev": "j2Z5qHVMlcj0TMj07TsUwe",
         "_type": "news",
-        "_updatedAt": "2020-01-24T10:00:02Z",
+        "_updatedAt": "2020-01-25T07:57:48Z",
         "author":
         {
             "_ref": "93ab3dba-5535-4104-a6d5-f99ab539e16f",
@@ -143,7 +143,7 @@
                 "_key": "79ec5e3c403e0",
                 "_type": "span",
                 "marks": [],
-                "text": "UN List 1"
+                "text": "Un List 1"
             }],
             "level": 1,
             "listItem": "bullet",
@@ -151,41 +151,69 @@
             "style": "normal"
         },
         {
-            "_key": "5f2fba9b2799",
+            "_key": "32c99a69e2ae",
             "_type": "block",
             "children": [
             {
-                "_key": "5f2fba9b27990",
+                "_key": "32c99a69e2ae0",
                 "_type": "span",
                 "marks": [],
-                "text": "UN List 2"
+                "text": "Un List 2"
             }],
-            "level": 1,
+            "level": 2,
             "listItem": "bullet",
             "markDefs": [],
             "style": "normal"
         },
         {
-            "_key": "7efb0a6581c0",
+            "_key": "14987bde44a2",
             "_type": "block",
             "children": [
             {
-                "_key": "7efb0a6581c00",
+                "_key": "14987bde44a20",
                 "_type": "span",
                 "marks": [],
-                "text": "UN List 3"
+                "text": "Un List 2.5"
             }],
-            "level": 1,
+            "level": 2,
             "listItem": "bullet",
             "markDefs": [],
             "style": "normal"
         },
         {
-            "_key": "93c4141527eb",
+            "_key": "b5da94d4dfe1",
             "_type": "block",
             "children": [
             {
-                "_key": "93c4141527eb0",
+                "_key": "b5da94d4dfe10",
+                "_type": "span",
+                "marks": [],
+                "text": "Un List 3"
+            }],
+            "level": 3,
+            "listItem": "bullet",
+            "markDefs": [],
+            "style": "normal"
+        },
+        {
+            "_key": "32dcdc11dede",
+            "_type": "block",
+            "children": [
+            {
+                "_key": "32dcdc11dede0",
+                "_type": "span",
+                "marks": [],
+                "text": ""
+            }],
+            "markDefs": [],
+            "style": "normal"
+        },
+        {
+            "_key": "ed326331fc25",
+            "_type": "block",
+            "children": [
+            {
+                "_key": "ed326331fc250",
                 "_type": "span",
                 "marks": [],
                 "text": "List 1"
@@ -196,31 +224,31 @@
             "style": "normal"
         },
         {
-            "_key": "3a3ded35f177",
+            "_key": "f6f2d28756e0",
             "_type": "block",
             "children": [
             {
-                "_key": "3a3ded35f1770",
+                "_key": "f6f2d28756e00",
                 "_type": "span",
                 "marks": [],
                 "text": "List 2"
             }],
-            "level": 1,
+            "level": 2,
             "listItem": "number",
             "markDefs": [],
             "style": "normal"
         },
         {
-            "_key": "e795cdd893f1",
+            "_key": "2b4e0c495b0a",
             "_type": "block",
             "children": [
             {
-                "_key": "e795cdd893f10",
+                "_key": "2b4e0c495b0a0",
                 "_type": "span",
                 "marks": [],
                 "text": "List 3"
             }],
-            "level": 1,
+            "level": 3,
             "listItem": "number",
             "markDefs": [],
             "style": "normal"

@@ -102,12 +102,13 @@ request({
                     // console.log('----------')
                     // console.log(bcctxt)
                     // console.log('----------')
-                    if(jsonData.bodyCopy[bc]._type == 'block')
+                    if(jsonData.bodyCopy[bc]._type == 'block' && !jsonData.bodyCopy[bc].listItem)
                     {
                         if(bcc)
                         {
-                            if(bcctxt.text != '')
+                            if(bcctxt.text != '' || bcctxt.text != undefined )
                             {
+                                // console.log(bcctxt.text);
                                 pageContent += '<p>';
                                 if(bcctxt.length>0)
                                 {
@@ -140,8 +141,6 @@ request({
                                     }
                                 }
                                 pageContent += '</p>'
-                                // console.log('-------------------------');
-                                // console.log(pageContent);
                             }
                         }
                     }
@@ -149,11 +148,26 @@ request({
                     {
                         if(bcc)
                         {
-                            // console.log(123)
                             pageContent += '<img src="'+bcc._ref+'" alt="">';
                         }
                     }
-                    console.log(pageContent);
+                    if(jsonData.bodyCopy[bc]._type == 'socialEmbed' && jsonData.bodyCopy[bc].socialEmbedCode)
+                    {
+                        pageContent += jsonData.bodyCopy[bc].socialEmbedCode;
+                    }
+                    if(jsonData.bodyCopy[bc].listItem == 'bullet' || jsonData.bodyCopy[bc].listItem == 'number')
+                    {
+                        if(bcc)
+                        {
+                            if (jsonData.bodyCopy[bc].listItem == 'bullet') {
+                                pageContent += '<p class="ul-level-'+jsonData.bodyCopy[bc].level+'">'+bcc[0].text+'</p>'
+                            }
+                            if (jsonData.bodyCopy[bc].listItem == 'number') {
+                                pageContent += '<p class="ol-level-'+jsonData.bodyCopy[bc].level+'">'+bcc[0].text+'</p>'
+                            }
+                        }
+                        // listParent += jsonData.bodyCopy[bc].listItem == 'bullet' ? '</ul>' : '</ol>';
+                    }
                 }
                 detailsPage += `
                     <!DOCTYPE html>
@@ -163,11 +177,11 @@ request({
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-                        <link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
-                        <link type="text/css" rel="stylesheet" href="css/style.css" />
-                        <link type="text/css" rel="stylesheet" href="css/fullpage.min.css" />
-                        <link type="text/css" rel="stylesheet" href="css/media.css" />
-                        <link rel="icon" href="images/favicon.ico" type="image/gif" sizes="16x16">
+                        <link type="text/css" rel="stylesheet" href="/css/owl.carousel.css" />
+                        <link type="text/css" rel="stylesheet" href="/css/style.css" />
+                        <link type="text/css" rel="stylesheet" href="/css/fullpage.min.css" />
+                        <link type="text/css" rel="stylesheet" href="/css/media.css" />
+                        <link rel="icon" href="/images/favicon.ico" type="image/gif" sizes="16x16">
                         <!-- Primary Meta Tags -->
                         <title>Startup Hack</title>
                         <meta name="title" content="` + jsonData.metaTitle + `">
@@ -224,9 +238,9 @@ request({
                             </div>
                             <!-- Footer -->
                         </div>
-                        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-                        <script type="text/javascript" src="js/fullpage.js"></script>
-                        <script type="text/javascript" src="js/common.js"></script>
+                        <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+                        <script type="text/javascript" src="/js/fullpage.js"></script>
+                        <script type="text/javascript" src="/js/common.js"></script>
                     </body>
 
                     </html>
@@ -264,7 +278,7 @@ request({
                 indexPage += ``
 
                 // indexPage = jsonData[0];
-                console.log(jsonData);
+                // console.log(jsonData);
                 fse.writeFileSync(`news/index.html`, indexPage);
             }
 
