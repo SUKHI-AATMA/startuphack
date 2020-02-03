@@ -3,7 +3,8 @@ var request = require("request");
 
 const distPath = '/news';
 
-var api = 'https://78nd8rko.api.sanity.io/v1/data/query/production?query=*[_type == "news"]';
+var apiNews = 'https://78nd8rko.api.sanity.io/v1/data/query/production?query=*[_type == "news"]';
+var apiAll = 'https://78nd8rko.api.sanity.io/v1/data/query/production?query=*';
 
 var today = new Date(),
     date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(),
@@ -23,22 +24,21 @@ var today = new Date(),
             <lastmod>` + timestamp + `</lastmod>
             <priority>0.80</priority>
         </url>`,
-    loader = `<div class="loader">
+    loader = `<!--<div class="loader">
             <div class="loaderCont">
                 <img src="images/loader.gif" alt="Loader" />
                 <p>Loading...</p>
             </div>
-        </div>`,
-    header = `<header>
+        </div>-->`,
+    header = `<!--<header>
             <div class="container">
                 
                 <a href="index.html" class="logo">
                     <img src="images/logo.png" alt="Bacon Buttie" />
                 </a>
             </div>
-
-        </header>`,
-    footer = `<footer></footer>`,
+        </header>-->`,
+    footer = `<!--<footer></footer>-->`,
     pageName = '',
     author = '',
     indexPage = '',
@@ -47,9 +47,11 @@ var today = new Date(),
 // clear destination folder
 fse.emptyDirSync(distPath);
 
+
+
 //Details Page
 request({
-    url: api,
+    url: apiAll,
     auth: {
         'bearer': 'skDDwzoijShoNda8N1faUBHHbUGhiNGSt3fsC9W6DjrKDnw8SSZ9eIkgsNr7YdR6OVaH9yhmPYwTxytrjFgwbrGJrNpNdtjQ1aT1SLzef8njB3ZbyLXFzDQZtAJGmFDQLDDEhoFbZAPoI8yPzmfZuLyppkRPKc8iRd4oNQKi27sRfoDnNJEc'
     },
@@ -57,14 +59,22 @@ request({
 }, function(error, response, body) {
     if (!error && response.statusCode === 200) {
         var jsonDataList = body.result;
+        var mImg;
         jsonDataList.forEach((jsonData, i) => {
             var nTitle = '';
-            if (jsonData._type == 'news' && jsonData._id == 'tF2nE5KHgXGw36UJOTyUUx') {
+            // console.log(jsonData._type);
+            // if(jsonData._type == 'sanity.imageAsset')
+            // {
+            //     // console.log(123)
+            // }
+            if (jsonData._type == 'news') {
                 var pageContent = '';
                 var mtImg = '';
                 var metaImg = jsonData.metaImage.asset;
+                var authorName = '';
                 if (metaImg) {
                     mtImg = metaImg._ref;
+                    mImg = imageAssetPath(jsonDataList, mtImg);
                 }
                 var newsTi = jsonData.newsTitle[0].children;
                 for(i=0; i<= newsTi.length; i++)
@@ -90,6 +100,7 @@ request({
                 {
                     var bcc = '';
                     var bcctxt = '';
+                    var carouselData = ''; 
                     if(jsonData.bodyCopy[bc].children)
                     {
                         bcc = jsonData.bodyCopy[bc].children;   
@@ -168,6 +179,44 @@ request({
                         }
                         // listParent += jsonData.bodyCopy[bc].listItem == 'bullet' ? '</ul>' : '</ol>';
                     }
+
+                    if(jsonData.image)
+                    {
+                        // console.log('0');
+                        for (ic = 0; ic <= jsonData.image.length -1; ic++)
+                        {
+                                // console.log(jsonData.metaTitle);
+                            if(jsonData.image[ic]._type == 'youtube'){
+                                // console.log(1)
+                                carouselData += '<iframe width="100%" height="800" src="'+jsonData.image[ic].url+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+                            }
+                            if(jsonData.image[ic]._type == 'image')
+                            {
+                                // console.log(2)
+                                var BimgP = jsonData.image[ic].asset._ref;
+                                var BimgPa =imageAssetPath(jsonDataList, BimgP);
+                                carouselData += '<img src="'+BimgPa+'" alt="Banner" />';
+                            }
+
+                            // console.log('----------');
+                            // console.log(carouselData);
+                        }
+                        // var imageCarousel = 
+                        // banner = `<div class="carousel">
+                        //             <img src="images/banner1.jpg" alt="Banner" />
+                        //             <img src="images/banner2.jpg" alt="Banner" />
+                        //             <img src="images/banner3.gif" alt="Banner" />
+                        //             <iframe width="100%" height="800" src="https://www.youtube.com/embed/T5sr9HsArhk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        //                 allowfullscreen></iframe>
+                        //         </div>`;
+                    }
+                    if(jsonData.author)
+                    {
+                        var authorRef = jsonData.author._ref;
+                        authorName = fetchAuthor(jsonDataList, authorRef);
+                        // console.log(authorName);
+                    }
+
                 }
                 detailsPage += `
                     <!DOCTYPE html>
@@ -180,8 +229,8 @@ request({
                         <link type="text/css" rel="stylesheet" href="/css/owl.carousel.css" />
                         <link type="text/css" rel="stylesheet" href="/css/style.css" />
                         <link type="text/css" rel="stylesheet" href="/css/fullpage.min.css" />
-                        <link type="text/css" rel="stylesheet" href="/css/media.css" />
-                        <link rel="icon" href="/images/favicon.ico" type="image/gif" sizes="16x16">
+                        <!--<link type="text/css" rel="stylesheet" href="/css/media.css" />-->
+                        <!--<link rel="icon" href="/images/favicon.ico" type="image/gif" sizes="16x16">-->
                         <!-- Primary Meta Tags -->
                         <title>Startup Hack</title>
                         <meta name="title" content="` + jsonData.metaTitle + `">
@@ -191,13 +240,13 @@ request({
                         <meta property="og:url" content="https://leonamunro.co.nz/news/` + pageName + `">
                         <meta property="og:title" content="` + jsonData.metaTitle + `">
                         <meta property="og:description" content="` + jsonData.metaDescription + `">
-                        <meta property="og:image" content="` + mtImg + `">
+                        <meta property="og:image" content="` + mImg + `">
                         <!-- Twitter -->
                         <meta property="twitter:card" content="summary_large_image">
                         <meta property="twitter:url" content="https://metatags.io/">
                         <meta property="twitter:title" content="` + jsonData.metaTitle + `">
                         <meta property="twitter:description" content="` + jsonData.metaDescription + `">
-                        <meta property="twitter:image" content="` + mtImg + `">
+                        <meta property="twitter:image" content="` + mImg + `">
                     </head>
 
                     <body>
@@ -209,24 +258,24 @@ request({
                             <div class="articleDetail">
                                 <div class="container">
                                     <div class="banner">
-                                        <img src="images/banner1.jpg" alt="Banner" />
+                                        <div class="carousel">`+carouselData+`</div>
                                         <div class="lhs">
                                             <p class="articleName">1968 Chevrolet Corvette Stingray</p>
                                             <p class="sourceName">Source: General Motors</p>
                                         </div>
                                         <div class="rhs">
                                             <p>SHARE THIS ARTICLE</p>
-                                            <a href="javascript:;"><img src="images/icon-fb.png" alt="Facebook" /></a>
-                                            <a href="javascript:;"><img src="images/icon-linkedin.png" alt="LinkedIn" /></a>
-                                            <a href="javascript:;"><img src="images/icon-twitter.png" alt="Twitter" /></a>
-                                            <a href="javascript:;"><img src="images/icon-mail.png" alt="Email" /></a>
+                                            <a href="javascript:;"><img src="/images/icon-fb.png" alt="Facebook" /></a>
+                                            <a href="javascript:;"><img src="/images/icon-linkedin.png" alt="LinkedIn" /></a>
+                                            <a href="javascript:;"><img src="/images/icon-twitter.png" alt="Twitter" /></a>
+                                            <a href="javascript:;"><img src="/images/icon-mail.png" alt="Email" /></a>
                                         </div>
                                     </div>
                                     <div class="content">
                                         <h1 class="title">`+nTitle+`</h1>
                                         <h2 class="subtitle">The next generation Chevrolet Corvette is 66 years in the making.</h2>
                                         <p class="authorName">By:
-                                            <span>`+author+`</span>
+                                            <span>`+authorName+`</span>
                                         </p>
                                         <p class="articleDate">`+jsonData.publishedDate+`</p>
                                         <div class="articleContent">
@@ -240,6 +289,7 @@ request({
                         </div>
                         <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
                         <script type="text/javascript" src="/js/fullpage.js"></script>
+                        <script type="text/javascript" src="/js/owl.carousel.js"></script>
                         <script type="text/javascript" src="/js/common.js"></script>
                     </body>
 
@@ -248,7 +298,7 @@ request({
 
                 // detailsPage = jsonData[0];    
                 fse.writeFileSync(`news/`+pageName+`.html`, detailsPage);
-                detailsPage = ''
+                detailsPage = '';
             }
 
 
@@ -258,7 +308,7 @@ request({
 
 //Index
 request({
-    url: api,
+    url: apiAll,
     auth: {
         'bearer': 'skDDwzoijShoNda8N1faUBHHbUGhiNGSt3fsC9W6DjrKDnw8SSZ9eIkgsNr7YdR6OVaH9yhmPYwTxytrjFgwbrGJrNpNdtjQ1aT1SLzef8njB3ZbyLXFzDQZtAJGmFDQLDDEhoFbZAPoI8yPzmfZuLyppkRPKc8iRd4oNQKi27sRfoDnNJEc'
     },
@@ -286,3 +336,34 @@ request({
         })
     }
 })
+function imageAssetPath(jD, imgID) {
+    var imgPath = '';
+    jD.forEach((jsData, i) => {
+        // console.log(imgID);
+        var imd = imgID;
+        if(jsData._type == 'sanity.imageAsset')
+        {
+            if(jsData._id == imd)
+            {
+                imgPath = jsData.url;
+            }
+        }
+    })
+    return imgPath;
+}
+function fetchAuthor(jD, refId)
+{
+    var authorName = '';
+    jD.forEach((jsData, i) => {
+        // console.log(imgID);
+        var rId = refId;
+        if(jsData._type == 'author')
+        {
+            if(jsData._id == rId)
+            {
+                authorName = jsData.name;
+            }
+        }
+    });
+    return authorName;
+}

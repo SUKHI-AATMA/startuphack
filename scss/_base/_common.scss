@@ -137,7 +137,7 @@ select {
 }
 
 .section2{
-    background: url("../images/section2-bg.jpg") 0 0 no-repeat;
+    /*background: url("../images/section2-bg.jpg") 0 0 no-repeat;*/
     padding: 20px;
 
     .bigTitle{
@@ -187,9 +187,14 @@ select {
     
 
     .rgtSec{
-        background: url("../images/section3-img.jpg") right 0 no-repeat;
-        background-size: cover;
+    /*    background: url("../images/section3-img.jpg") right 0 no-repeat;
+        background-size: cover;*/
         height: 100%;
+        overflow: hidden;
+        img {
+            width: auto;
+            height: 100%;
+        }
         
     }
 }
@@ -284,9 +289,14 @@ select {
     
 
     .lftSec{
-        background: url("../images/section3-img.jpg") right 0 no-repeat;
-        background-size: cover;
+        /*background: url("../images/section3-img.jpg") right 0 no-repeat;
+        background-size: cover;*/
         height: 100%;
+        overflow: hidden;
+        img {
+            width: auto;
+            height: 100%;
+        }
         
     }
 }
