@@ -257,7 +257,25 @@ select {
   align-items: center; }
 
 .section1 .lftSec, .section1 .rgtSec {
+  position: relative;
   width: 50%; }
+
+.section1 .rgtSec {
+  padding: 30px 50px 60px; }
+
+.section1 .lftSec {
+  height: 100%;
+  overflow: hidden; }
+  .section1 .lftSec img {
+    height: 100%;
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: auto; }
 
 .section1 p {
   color: #fff; }
@@ -311,6 +329,7 @@ select {
   align-items: center; }
 
 .section3 .lftSec, .section3 .rgtSec {
+  position: relative;
   width: 50%; }
 
 .section3 .lftSec {
@@ -331,8 +350,15 @@ select {
   height: 100%;
   overflow: hidden; }
   .section3 .rgtSec img {
-    width: auto;
-    height: 100%; }
+    height: 100%;
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: auto; }
 
 .button {
   background-color: #d8d8d8;
@@ -359,6 +385,9 @@ select {
   -ms-flex-item-align: center;
   align-self: center; }
   .section4 ul li {
+    max-height: 600px;
+    min-height: 600px;
+    overflow: hidden;
     position: relative;
     width: 30%; }
     .section4 ul li:before {
@@ -371,7 +400,10 @@ select {
       background-color: rgba(3, 72, 142, 0.5);
       z-index: 1; }
     .section4 ul li img {
-      width: 100%; }
+      height: 100%;
+      max-width: none;
+      /*transform: translate(-25%, 0px);*/
+      width: auto; }
     .section4 ul li .articleDetail {
       position: absolute;
       bottom: 20px;
@@ -402,6 +434,7 @@ select {
   align-items: center; }
 
 .section5 .lftSec, .section5 .rgtSec {
+  position: relative;
   width: 50%; }
 
 .section5 .rgtSec {
@@ -422,8 +455,15 @@ select {
   height: 100%;
   overflow: hidden; }
   .section5 .lftSec img {
-    width: auto;
-    height: 100%; }
+    height: 100%;
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: auto; }
 
 .innerpage * {
   color: #fff; }

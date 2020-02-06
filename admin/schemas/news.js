@@ -15,7 +15,15 @@ export default {
     },
     {
       name: 'metaImage',
-      title: 'Meta Image',
+      title: 'Meta Image (1200 x 630)',
+      type: 'image',
+      options: {
+        accept: '.png,.jpg,.gif,.jpeg'
+      }
+    },
+    {
+      name: 'hmbImage',
+      title: 'Homepage Banner Image (1980 x 1080)',
       type: 'image',
       options: {
         accept: '.png,.jpg,.gif,.jpeg'
@@ -28,7 +36,7 @@ export default {
     // },
     {
       name: 'image',
-      title: 'Banner',
+      title: 'Details Banner Image(minimum width: 1600)',
       type: 'blockContentForImageVideo'
     },
     

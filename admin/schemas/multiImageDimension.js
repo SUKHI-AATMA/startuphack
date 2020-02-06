@@ -12,22 +12,17 @@ const previewImage = ({value})  => {
   const imageActualName = imageNameLastIndex;
   const imageExtension = imageName.substr(imageName.lastIndexOf("-") + 1, imageName.length);
   //const imagePath = 'https://cdn.sanity.io/images/78nd8rko/production/' + imageNameFirstIndex + '.' + imageNameLastIndex + '?w=1000&h=1000&fit=max';
-  const imageDimension_Big = 'https://cdn.sanity.io/images/78nd8rko/production/' + imageActualName + '.' + imageExtension + '?w=1000&h=1000&fit=max';
-  const imageDimension_Med = 'https://cdn.sanity.io/images/78nd8rko/production/' + imageActualName + '.' + imageExtension + '?w=500&h=500&fit=max';
-  const imageDimension_Small = 'https://cdn.sanity.io/images/78nd8rko/production/' + imageActualName + '.' + imageExtension + '?w=300&h=300&fit=max';
+  const imageDimension_Big = 'https://cdn.sanity.io/images/78nd8rko/production/' + imageActualName + '.' + imageExtension + '?w=1920&fit=max';
+  const imageDimension_Med = 'https://cdn.sanity.io/images/78nd8rko/production/' + imageActualName + '.' + imageExtension + '?w=960&fit=max';
+  const imageDimension_Small = 'https://cdn.sanity.io/images/78nd8rko/production/' + imageActualName + '.' + imageExtension + '?w=425&h=590&fit=max';
 
   
   return (
     <div>
-<<<<<<< HEAD
     <img src={imageDimension_Big} alt="" style={{width: '100%', display: 'block', marginBottom: '10px'}} />
     <img src={imageDimension_Med} alt="" style={{width: '50%', display: 'block', marginBottom: '10px'}} />
     <img src={imageDimension_Small} alt="" style={{width: '30%', display: 'block', marginBottom: '10px'}} />
-=======
-    <img src={imageDimension_Big} alt="" style={{width: "100%"}} />
-    <img src={imageDimension_Med} alt="" style={{width: "50%"}} />
-    <img src={imageDimension_Small} alt="" style={{width: "25%"}} />
->>>>>>> 515940f1807b4ea8fb2febc615b985c81612bf04
+
     </div>
   );
 };
