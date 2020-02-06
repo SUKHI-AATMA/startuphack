@@ -1,71 +1,87 @@
-::selection { background:#fff; color:#0a0c12}
-input::-webkit-input-placeholder { 
+::selection {
+    background: #fff;
+    color: #0a0c12
+}
+
+input::-webkit-input-placeholder {
     color: #b6b6b6;
-  }
+}
+
 /* Grid CSS - START */
-.span2{
+.span2 {
     width: 50%;
-    padding:0 15px;
-    float: left;  
-}
-.span3{
-    width: 33.3%;
-    padding:0 15px;
-    float: left;
-    position:relative;
-}
-.span4{
-    width: 25%;
-    padding:0 15px;
-    float: left;
-}
-.span5{
-    width: 20%;
-    padding:0 15px;
-    float: left;
-}
-.span40{
-    width: 40%;
-    padding:0 15px;
-    float: left;
-}
-.span60{
-    width: 60%;
-    padding:0 15px;
-    float: left;
-}
-.span6{
-    width: 66.6%;
-    padding:0 15px;
-    float: left;
-}
-.span8{
-    width: 75%;
-    padding:0 15px;
-    float: left;
-}
-.span9{
-    width: 80%;
-    padding:0 15px;
-    float: left;
-}
-.span10{
-    width: 90%;
-    padding:0 15px;
-    float: left;
-}
-.span12{
-    width: 100%;
-    padding:0 15px;
+    padding: 0 15px;
     float: left;
 }
 
-.centered{
+.span3 {
+    width: 33.3%;
+    padding: 0 15px;
+    float: left;
+    position: relative;
+}
+
+.span4 {
+    width: 25%;
+    padding: 0 15px;
+    float: left;
+}
+
+.span5 {
+    width: 20%;
+    padding: 0 15px;
+    float: left;
+}
+
+.span40 {
+    width: 40%;
+    padding: 0 15px;
+    float: left;
+}
+
+.span60 {
+    width: 60%;
+    padding: 0 15px;
+    float: left;
+}
+
+.span6 {
+    width: 66.6%;
+    padding: 0 15px;
+    float: left;
+}
+
+.span8 {
+    width: 75%;
+    padding: 0 15px;
+    float: left;
+}
+
+.span9 {
+    width: 80%;
+    padding: 0 15px;
+    float: left;
+}
+
+.span10 {
+    width: 90%;
+    padding: 0 15px;
+    float: left;
+}
+
+.span12 {
+    width: 100%;
+    padding: 0 15px;
+    float: left;
+}
+
+.centered {
     position: relative;
     left: 50%;
     @include transform-translateX(-50%);
     z-index: 1;
 }
+
 /* Grid CSS - END */
 
 select {
@@ -75,153 +91,188 @@ select {
     text-overflow: '';
 }
 
-.container{
-    width:100%;
-    margin:0 auto;
+.container {
+    width: 100%;
+    margin: 0 auto;
     padding: 0 40px;
     max-width: 1440px;
     position: relative;
 }
 
 
-.container{
+.container {
     width: 100%;
     max-width: 1210px;
     margin: 0 auto;
     padding: 0;
 }
 
-.wrapper{ 
-    width: 100%; 
+.wrapper {
+    width: 100%;
     float: left;
     overflow: hidden;
     background-color: #0a0c12;
 }
 
-.section1{
-    .fp-tableCell{
+p {
+    color: #fff;
+
+    &.smallTxt {
+        font-size: 1.8rem;
+        font-family: $montserratBold;
+    }
+
+    &.bigTitle {
+        font-size: 10rem;
+        line-height: 9rem;
+        font-family: $montserratExtraBold;
+        padding: 50px 0;
+    }
+
+    &.introCopy {
+        font-size: 2.2rem;
+    }
+}
+
+.section1 {
+    .fp-tableCell {
         display: flex;
         align-items: center;
     }
-    
-    .lftSec, .rgtSec{
+
+    .lftSec,
+    .rgtSec {
         position: relative;
         width: 50%
     }
+
     .rgtSec {
         padding: 30px 50px 60px;
     }
-    .lftSec{
+
+    .lftSec {
         height: 100%;
         overflow: hidden;
+
         img {
             height: 100%;
             max-width: none;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             width: auto;
         }
     }
-    p{
+
+    p {
         color: #fff;
-        &.smallTxt{
+
+        &.smallTxt {
             font-size: 1.8rem;
             font-family: $montserratBold;
         }
-        &.bigTitle{
+
+        &.bigTitle {
             font-size: 10rem;
             line-height: 9rem;
             font-family: $montserratExtraBold;
             padding: 50px 0;
         }
-        &.introCopy{
+
+        &.introCopy {
             font-size: 2.2rem;
         }
     }
-    .button{
+
+    .button {
         background-color: #d8d8d8;
         color: #000;
         padding: 20px 50px;
         font-size: 2.6rem;
         font-family: $montserratExtraBold;
         float: left;
-        margin-top:30px;
+        margin-top: 30px;
         @include border-radius(3px);
 
     }
 }
 
-.section2{
+.section2 {
     /*background: url("../images/section2-bg.jpg") 0 0 no-repeat;*/
     padding: 20px;
 
-    .bigTitle{
+    .bigTitle {
         color: #fff;
         font-size: 12rem;
         line-height: 10rem;
         font-family: $montserratExtraBold;
     }
 
-    .transpTxt{
+    .transpTxt {
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: #fff;
     }
-    .smallTxt{
+
+    .smallTxt {
         color: #fff;
         padding: 30px 0 0 0;
         font-size: 2.2rem;
     }
 }
 
-.section3{
-    .fp-tableCell{
+.section3 {
+    .fp-tableCell {
         display: flex;
         align-items: center
     }
 
-    .lftSec, .rgtSec{
+    .lftSec,
+    .rgtSec {
         position: relative;
         width: 50%;
-        
+
     }
-    .lftSec{
+
+    .lftSec {
         padding: 30px 50px 60px;
-        .bigTitle{
+
+        .bigTitle {
             font-size: 5rem;
             color: #fff;
             font-family: $montserratExtraBold;
             line-height: 4.5rem;
-        }        
-        .smallTxt{
+        }
+
+        .smallTxt {
             font-size: 2.2rem;
             color: #fff;
             padding: 40px 0;
         }
     }
 
-    
 
-    .rgtSec{
-    /*    background: url("../images/section3-img.jpg") right 0 no-repeat;
+
+    .rgtSec {
+        /*    background: url("../images/section3-img.jpg") right 0 no-repeat;
         background-size: cover;*/
         height: 100%;
         overflow: hidden;
+
         img {
             height: 100%;
             max-width: none;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             width: auto;
         }
     }
 }
 
-.button{
+.button {
     background-color: #d8d8d8;
     color: #000;
     padding: 15px 30px;
@@ -230,25 +281,28 @@ select {
     float: left;
     @include border-radius(3px);
 
-} 
+}
 
-.section4{
-    .threeColumnLayout{
+.section4 {
+    .threeColumnLayout {
         max-width: 1400px;
         margin: 0 auto;
     }
-    ul{
+
+    ul {
         display: flex;
         justify-content: space-around;
         align-self: center;
-        li{
+
+        li {
             max-height: 600px;
             min-height: 600px;
             overflow: hidden;
             position: relative;
             width: 30%;
-            &:before{
-                content:"";
+
+            &:before {
+                content: "";
                 position: absolute;
                 left: 0;
                 top: 0;
@@ -258,26 +312,28 @@ select {
                 z-index: 1;
             }
 
-            img{
+            img {
                 height: 100%;
                 max-width: none;
                 /*transform: translate(-25%, 0px);*/
                 width: auto;
             }
 
-            .articleDetail{
+            .articleDetail {
                 position: absolute;
                 bottom: 20px;
                 width: 100%;
                 padding: 10px;
                 z-index: 2;
             }
-            h2{ 
-                color:$white;  
+
+            h2 {
+                color: $white;
                 text-align: center;
-                margin-bottom: 10px;      
+                margin-bottom: 10px;
             }
-            .button{
+
+            .button {
                 position: relative;
                 float: left;
                 left: 50%;
@@ -285,137 +341,159 @@ select {
                 clear: both;
             }
         }
-    }    
-    
+    }
+
 }
 
-.section5{
-    .fp-tableCell{
+.section5 {
+    .fp-tableCell {
         display: flex;
         align-items: center
     }
 
-    .lftSec, .rgtSec{
+    .lftSec,
+    .rgtSec {
         position: relative;
         width: 50%;
-        
+
     }
-    .rgtSec{
+
+    .rgtSec {
         padding: 30px 30px 30px 60px;
-        .bigTitle{
+
+        .bigTitle {
             font-size: 5rem;
             color: #fff;
             font-family: $montserratExtraBold;
             line-height: 4.5rem;
-        }        
-        .smallTxt{
+        }
+
+        .smallTxt {
             font-size: 2.2rem;
             color: #fff;
             padding: 40px 0;
         }
     }
 
-    
 
-    .lftSec{
+
+    .lftSec {
         /*background: url("../images/section3-img.jpg") right 0 no-repeat;
         background-size: cover;*/
         height: 100%;
         overflow: hidden;
+
         img {
             height: 100%;
             max-width: none;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             width: auto;
         }
     }
 }
 
-.innerpage{
-    *{
+.innerpage {
+    * {
         color: $white;
     }
-    .articleDetail{
+
+    .articleDetail {
         margin: 50px 0;
         display: flex;
         flex-direction: column;
 
-        .banner{
-            .articleName{
+        .banner {
+            .articleName {
                 padding: 0 0 5px 0;
                 font-size: 1.4rem;
             }
-            img{
+
+            img {
                 width: 100%;
             }
-            .owl-nav{
+
+            .owl-nav {
                 display: flex;
                 justify-content: center;
-                > *{
+
+                >* {
                     padding: 10px 5px;
                     font-size: 1.4rem;
                     text-transform: capitalize;
                 }
             }
-            .sourceName{
+
+            .sourceName {
                 font-size: 1.2rem;
             }
 
-            .lhs{
+            .lhs {
                 padding-top: 10px;
                 width: 60%;
                 float: left;
             }
-            .rhs{
+
+            .rhs {
                 padding-top: 10px;
                 width: auto;
                 float: right;
                 display: flex;
                 align-items: center;
-                p{
+
+                p {
                     margin-right: 10px;
                     font-size: 1.4rem;
                 }
-                a{
+
+                a {
                     margin: 0 5px;
                 }
             }
         }
 
-        h1{
+        h1 {
             padding: 40px 0 5px 0;
         }
-        h2{
+
+        h2 {
             font-size: 2.6rem;
             padding-bottom: 20px;
         }
-        .content{
+
+        .content {
             float: left;
         }
-        .authorName{
+
+        .authorName {
             font-size: 1.6rem;
         }
-        .articleDate{
+
+        .articleDate {
             font-size: 1.4rem;
         }
-        .articleContent{
-            padding:20px 0 0 0;
-            
 
-            p,a{
+        .articleContent {
+            padding: 20px 0 0 0;
+
+
+            p,
+            a {
                 font-size: 1.6rem;
             }
-            a{
+
+            a {
                 text-decoration: underline;
             }
-            ul{
+
+            ul {
                 display: flex;
                 flex-direction: column;
                 margin: 20px 0;
-                li{
+
+                li {
                     font-size: 1.6rem;
                     list-style: disc inside;
                     padding: 3px 0;

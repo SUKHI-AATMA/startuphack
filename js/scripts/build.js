@@ -522,6 +522,55 @@ function indexPg(allQueryResult) {
             // titleText += '</div>';
             // console.log(titleText);
         }
+        if(jsonData.bodyCopy) 
+        {
+            var introTxt = '';
+            for (var bc = 0; bc <= jsonData.bodyCopy.length - 1; bc++) {
+                var bcc = '', bcctxt = '', carouselData = '';
+                if (jsonData.bodyCopy[bc].children) {
+                    bcc = jsonData.bodyCopy[bc].children;
+                    bcctxt = bcc;
+                }
+                if (jsonData.bodyCopy[bc].asset) {
+                    bcc = jsonData.bodyCopy[bc].asset;
+                }
+                if (jsonData.bodyCopy[bc]._type == 'block' && !jsonData.bodyCopy[bc].listItem) {
+                    if (bcc) {
+                        if (bcctxt.text != '' || bcctxt.text != undefined) {
+                            // console.log(bcctxt.text);
+                            introTxt += '<p class="introCopy">';
+                            if (bcctxt.length > 0) {
+                                for (var bcctxtL = 0; bcctxtL <= bcctxt.length - 1; bcctxtL++) {
+                                    if (bcctxt[bcctxtL].marks) {
+                                        if (bcctxt[bcctxtL].marks.length == 0) {
+                                            // console.log(1234);
+                                            introTxt += bcctxt[bcctxtL].text;
+                                        }
+                                        if (bcctxt[bcctxtL].marks.length != 0) {
+                                            // console.log(123456789);
+                                            // introTxt += '<span class="'+bcctxt[bcctxtL].marks[mk]+'+">'+ bcctxt[bcctxtL].text+'</span>';
+                                            var marksClasses = '';
+                                            for (var mk = 0; mk <= bcctxt[bcctxtL].marks.length - 1; mk++) {
+                                                if (!marks.includes(marks)) {
+                                                    // console.log(1243);
+                                                    marksClasses += bcctxt[bcctxtL].marks[mk] + ' ';
+                                                    // introTxt += '<span class="'+bcctxt[bcctxtL].marks[mk]+'+">'+ bcctxt[bcctxtL].text+'</span>';
+                                                }
+                                            }
+                                            introTxt += '<span class="' + marksClasses + '">' + bcctxt[bcctxtL].text + '</span>';
+                                        }
+                                    }
+                                    // console.log();
+                                }
+                            }
+                            introTxt += '</p>'
+                            console.log(introTxt);
+                            console.log('--------');
+                        }
+                    }
+                }                    
+            }
+        }
         var hmbim = '';
         if (jsonData.hmbImage) {
             // console.log(jsonData.hmbImage.asset._ref);
@@ -539,7 +588,8 @@ function indexPg(allQueryResult) {
             // console.log('Full page section');
             sections += `<!-- Section2 - START -->
                                 <section class="slides section2" style='background: url("` + hmbimg + `") 0 0 no-repeat; background-size: cover;'>
-                                    ` + titleText + `
+                                    ` + titleText + introTxt + `
+
                                 </section>
                                 <!-- Section2 - END -->`;
         }
@@ -552,7 +602,7 @@ function indexPg(allQueryResult) {
                                         <img class="lazy" data-src="` + hmbimg + `" alt="` + jsonData.metaTitle + `" />
                                     </div>
                                     <div class="rgtSec">
-                                        ` + titleText + `
+                                        ` + titleText  + introTxt + `
                                         
                                         <!--<a href="javascript:;" class="button">GRAB YOUR TICKET</a>-->
                                     </div>
@@ -593,7 +643,7 @@ function indexPg(allQueryResult) {
             sections += `<!-- Section3 - START -->
                                 <section class="slides section3">
                                     <div class="lftSec">
-                                        ` + titleText + `
+                                        ` + titleText  + introTxt + `
                                         <!--<a href="javascript:;" class="button">BROWSE OUR EVENTS</a>-->
                                     </div>
                                     <div class="rgtSec">
