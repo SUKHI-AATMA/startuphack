@@ -1,0 +1,11 @@
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script>
+var data = $.ajax({
+    method: "GET",
+    url: "https://78nd8rko.api.sanity.io/v1/data/query/production?query=*",
+    headers: {
+        "Authorization": "Bearer skDDwzoijShoNda8N1faUBHHbUGhiNGSt3fsC9W6DjrKDnw8SSZ9eIkgsNr7YdR6OVaH9yhmPYwTxytrjFgwbrGJrNpNdtjQ1aT1SLzef8njB3ZbyLXFzDQZtAJGmFDQLDDEhoFbZAPoI8yPzmfZuLyppkRPKc8iRd4oNQKi27sRfoDnNJEc"
+    }
+})
+console.log(data);
+</script>
