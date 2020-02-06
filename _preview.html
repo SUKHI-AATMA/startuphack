@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 
-                    <!DOCTYPE html>
+                <!DOCTYPE html>
                     <html lang="en">
 
                     <head>
@@ -2686,7 +2685,7 @@
 
                     </html>
                 
-=======
+
 <script>
     fetch("https://78nd8rko.api.sanity.io/v1/data/query/production?query=*", {
         method: "POST",
@@ -2708,4 +2707,51 @@
         error.message
     })
     </script>
->>>>>>> 6d44402c93c9ad85f43611ff77a06c4d09b27cc9
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script>
+// $.getJSON("https://78nd8rko.api.sanity.io/v1/data/query/production?query=*", function(data) {
+//     console.log(data);
+// });
+$.ajax({
+  method: "GET",
+  url: "https://78nd8rko.api.sanity.io/v1/data/query/production?query=*",
+
+})
+  .done(function( msg ) {
+    alert( "Data Saved: " + msg );
+  });
+// var flickerAPI = "https://78nd8rko.api.sanity.io/v1/data/query/production?query=*";
+// $.getJSON(flickerAPI, {
+//         format: "json",
+//         Authorization: "Bearer skDDwzoijShoNda8N1faUBHHbUGhiNGSt3fsC9W6DjrKDnw8SSZ9eIkgsNr7YdR6OVaH9yhmPYwTxytrjFgwbrGJrNpNdtjQ1aT1SLzef8njB3ZbyLXFzDQZtAJGmFDQLDDEhoFbZAPoI8yPzmfZuLyppkRPKc8iRd4oNQKi27sRfoDnNJEc",
+//     })
+//     .done(function(data) {
+//         $.each(data.items, function(i, item) {
+//             $("<img>").attr("src", item.media.m).appendTo("#images");
+//             if (i === 3) {
+//                 return false;
+//             }
+//         });
+//     });
+// fetch("https://78nd8rko.api.sanity.io/v1/data/query/production?query=*", {
+//     method: "POST",
+//     // mode: 'no-cors',
+//     // body: {},
+//     headers: {
+//         "Authorization": "Bearer skDDwzoijShoNda8N1faUBHHbUGhiNGSt3fsC9W6DjrKDnw8SSZ9eIkgsNr7YdR6OVaH9yhmPYwTxytrjFgwbrGJrNpNdtjQ1aT1SLzef8njB3ZbyLXFzDQZtAJGmFDQLDDEhoFbZAPoI8yPzmfZuLyppkRPKc8iRd4oNQKi27sRfoDnNJEc",
+//         "Content-Type": "application/json",
+//     },
+//     credentials: "same-origin"
+// }).then(function(response) {
+//     response.status
+//     response.statusText
+//     response.headers
+//     response.url
+//     console.log(response)
+//     return response.text()
+// }).catch(function(error) {
+//     error.message
+// })
+</script>
+
