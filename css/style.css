@@ -286,7 +286,7 @@ select {
   border-radius: 3px; }
 
 .section2 {
-  background: url("../images/section2-bg.jpg") 0 0 no-repeat;
+  /*background: url("../images/section2-bg.jpg") 0 0 no-repeat;*/
   padding: 20px; }
   .section2 .bigTitle {
     color: #fff;
@@ -326,9 +326,13 @@ select {
     padding: 40px 0; }
 
 .section3 .rgtSec {
-  background: url("../images/section3-img.jpg") right 0 no-repeat;
-  background-size: cover;
-  height: 100%; }
+  /*    background: url("../images/section3-img.jpg") right 0 no-repeat;
+        background-size: cover;*/
+  height: 100%;
+  overflow: hidden; }
+  .section3 .rgtSec img {
+    width: auto;
+    height: 100%; }
 
 .button {
   background-color: #d8d8d8;
@@ -413,9 +417,13 @@ select {
     padding: 40px 0; }
 
 .section5 .lftSec {
-  background: url("../images/section3-img.jpg") right 0 no-repeat;
-  background-size: cover;
-  height: 100%; }
+  /*background: url("../images/section3-img.jpg") right 0 no-repeat;
+        background-size: cover;*/
+  height: 100%;
+  overflow: hidden; }
+  .section5 .lftSec img {
+    width: auto;
+    height: 100%; }
 
 .innerpage * {
   color: #fff; }

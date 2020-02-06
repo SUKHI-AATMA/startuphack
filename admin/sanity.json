@@ -4,6 +4,9 @@
     "name": "startuphack-cms",
     "basePath": "/admin/dist/"
   },
+  "paths": {
+    "compiled": "/mydistfolder"
+  },
   "api": {
     "projectId": "78nd8rko",
     "dataset": "production"
