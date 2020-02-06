@@ -248,6 +248,19 @@ select {
   overflow: hidden;
   background-color: #0a0c12; }
 
+p {
+  color: #fff; }
+  p.smallTxt {
+    font-size: 1.8rem;
+    font-family: "Montserrat-Bold"; }
+  p.bigTitle {
+    font-size: 10rem;
+    line-height: 9rem;
+    font-family: "MontserratExtraBold";
+    padding: 50px 0; }
+  p.introCopy {
+    font-size: 2.2rem; }
+
 .section1 .fp-tableCell {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -256,8 +269,27 @@ select {
   -ms-flex-align: center;
   align-items: center; }
 
-.section1 .lftSec, .section1 .rgtSec {
+.section1 .lftSec,
+.section1 .rgtSec {
+  position: relative;
   width: 50%; }
+
+.section1 .rgtSec {
+  padding: 30px 50px 60px; }
+
+.section1 .lftSec {
+  height: 100%;
+  overflow: hidden; }
+  .section1 .lftSec img {
+    height: 100%;
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: auto; }
 
 .section1 p {
   color: #fff; }
@@ -310,7 +342,9 @@ select {
   -ms-flex-align: center;
   align-items: center; }
 
-.section3 .lftSec, .section3 .rgtSec {
+.section3 .lftSec,
+.section3 .rgtSec {
+  position: relative;
   width: 50%; }
 
 .section3 .lftSec {
@@ -331,8 +365,15 @@ select {
   height: 100%;
   overflow: hidden; }
   .section3 .rgtSec img {
-    width: auto;
-    height: 100%; }
+    height: 100%;
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: auto; }
 
 .button {
   background-color: #d8d8d8;
@@ -359,6 +400,9 @@ select {
   -ms-flex-item-align: center;
   align-self: center; }
   .section4 ul li {
+    max-height: 600px;
+    min-height: 600px;
+    overflow: hidden;
     position: relative;
     width: 30%; }
     .section4 ul li:before {
@@ -371,7 +415,10 @@ select {
       background-color: rgba(3, 72, 142, 0.5);
       z-index: 1; }
     .section4 ul li img {
-      width: 100%; }
+      height: 100%;
+      max-width: none;
+      /*transform: translate(-25%, 0px);*/
+      width: auto; }
     .section4 ul li .articleDetail {
       position: absolute;
       bottom: 20px;
@@ -401,7 +448,9 @@ select {
   -ms-flex-align: center;
   align-items: center; }
 
-.section5 .lftSec, .section5 .rgtSec {
+.section5 .lftSec,
+.section5 .rgtSec {
+  position: relative;
   width: 50%; }
 
 .section5 .rgtSec {
@@ -422,8 +471,15 @@ select {
   height: 100%;
   overflow: hidden; }
   .section5 .lftSec img {
-    width: auto;
-    height: 100%; }
+    height: 100%;
+    max-width: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: auto; }
 
 .innerpage * {
   color: #fff; }
@@ -487,7 +543,8 @@ select {
     font-size: 1.4rem; }
   .innerpage .articleDetail .articleContent {
     padding: 20px 0 0 0; }
-    .innerpage .articleDetail .articleContent p, .innerpage .articleDetail .articleContent a {
+    .innerpage .articleDetail .articleContent p,
+    .innerpage .articleDetail .articleContent a {
       font-size: 1.6rem; }
     .innerpage .articleDetail .articleContent a {
       text-decoration: underline; }

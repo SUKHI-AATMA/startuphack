@@ -33,7 +33,7 @@ export default {
     //   ]
     // },
     {
-      type: 'multiImageDimension'
+      type: 'image'
     },
     {
       type: 'youtube'

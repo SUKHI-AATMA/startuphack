@@ -46,3 +46,31 @@ $(function(){
       });
     }
 });
+
+function isInViewport(elem) {
+
+    var elementTop = elem.offset().top;
+    var elementBottom = elementTop + elem.outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+}
+function lazyLoad() {
+    $('.lazy').each(function () {
+        if (isInViewport($(this)) == true) {
+            $(this).attr('src', $(this).attr('data-src'))
+            $(this).removeAttr('data-src').removeClass('lazy')
+        };
+    })
+}
+$(window).on('scroll', function () {
+    if ($('.lazy').length) {
+        lazyLoad();
+    }
+})
+$(document).ready(function () {
+    if ($('.lazy').length) {
+        lazyLoad();
+    }
+});

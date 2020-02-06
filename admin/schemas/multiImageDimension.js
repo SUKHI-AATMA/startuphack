@@ -12,9 +12,9 @@ const previewImage = ({value})  => {
   const imageActualName = imageNameLastIndex;
   const imageExtension = imageName.substr(imageName.lastIndexOf("-") + 1, imageName.length);
   //const imagePath = 'https://cdn.sanity.io/images/78nd8rko/production/' + imageNameFirstIndex + '.' + imageNameLastIndex + '?w=1000&h=1000&fit=max';
-  const imageDimension_Big = 'https://cdn.sanity.io/images/78nd8rko/production/' + imageActualName + '.' + imageExtension + '?w=1000&h=1000&fit=max';
-  const imageDimension_Med = 'https://cdn.sanity.io/images/78nd8rko/production/' + imageActualName + '.' + imageExtension + '?w=500&h=500&fit=max';
-  const imageDimension_Small = 'https://cdn.sanity.io/images/78nd8rko/production/' + imageActualName + '.' + imageExtension + '?w=300&h=300&fit=max';
+  const imageDimension_Big = 'https://cdn.sanity.io/images/78nd8rko/production/' + imageActualName + '.' + imageExtension + '?w=1920&fit=max';
+  const imageDimension_Med = 'https://cdn.sanity.io/images/78nd8rko/production/' + imageActualName + '.' + imageExtension + '?w=960&fit=max';
+  const imageDimension_Small = 'https://cdn.sanity.io/images/78nd8rko/production/' + imageActualName + '.' + imageExtension + '?w=425&h=590&fit=max';
 
   
   return (
