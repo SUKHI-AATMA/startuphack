@@ -1,6 +1,6 @@
 var previewURL="";
 
-if(location.protocol != "https") {
+if(location.protocol.indexOf("https") == -1) {
     previewURL = "http://localhost:7889";
 }
 else {
