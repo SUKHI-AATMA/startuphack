@@ -4,7 +4,7 @@ if(location.protocol != "https") {
     previewURL = "http://localhost:7889";
 }
 else {
-    previewURL = "https://startuphack-staging.netlify.com/";
+    previewURL = "https://startuphack-staging.netlify.com";
 }
 
 
