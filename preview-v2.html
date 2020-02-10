@@ -78,9 +78,110 @@
         </div>
         <!-- Footer -->
     </div>
+    <hr>
+    <div class="wrapper homepage">
+        <div class="sectionWrapper">
+            <!-- Section1 - START -->
+            <section class="slides section1">
+                <div class="lftSec">
+                    <img src="" alt="Startup Event" />
+                </div>
+                <div class="rgtSec">
+                    <p class="smallTxt"><span></span> - <span></span></p>
+                    <p class="bigTitle"></p>
+                    <p class="introCopy"></p>
+                    <a href="javascript:;" class="button">GRAB YOUR TICKET</a>
+                </div>
+            </section>
+            <!-- Section1 - END -->
+
+            <!-- Section2 - START -->
+            <section class="slides section2" style='background: url("/images/section2-bg.jpg") 0 0 no-repeat;'>
+                <!-- <p class="transpTxt bigTitle">NOTHING
+                    <br> NORMAL EVER</p> -->
+                <p class="bigTitle">CHANGED
+                    <br> THE WORLD.</p>
+                <p class="smallTxt">BUT A COMMUNITY OF WORLD-CONQUERING
+                    <br> ENTREPRENEURS JUST MIGHT.</p>
+            </section>
+            <!-- Section2 - END -->
+
+            <!-- Section3 - START -->
+            <section class="slides section3">
+                <div class="lftSec">
+                    <p class="bigTitle">MAKING
+                        <br> ENTREPRENEURIAL
+                        <br> WAVES AT HOMR AND
+                        <br> AWAY.
+                    </p>
+                    <p class="smallTxt">Lorem has grown from a single gathering in Helsinki to a series of events organized all around the world.
+                        We throw bigger events in Finland, Japan, and China, and smaller get-togethers around the globe,
+                        from Singapore to NYC. Wherever they happen, our events aim at equipping founders to solve the most
+                        meaningful problems of our time.</p>
+                    <a href="javascript:;" class="button">BROWSE OUR EVENTS</a>
+                </div>
+                <div class="rgtSec">
+                    <img src="/images/section3-img.jpg" alt="">
+                </div>
+            </section>
+            <!-- Section3 - END -->
+
+            <!-- Section4 - START -->
+            <section class="slides section4">
+                <div class="threeColumnLayout">
+                    <ul>
+                        <li>
+                            <img src="images/section4-img.jpg" />
+                            <div class="articleDetail">
+                                <h2>FOR STARTUPS</h2>
+                                <a href="javascript:;" class="button">READ MORE</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/section4-img.jpg" />
+                            <div class="articleDetail">
+                                <h2>FOR STARTUPS</h2>
+                                <a href="javascript:;" class="button">READ MORE</a>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="images/section4-img.jpg" />
+                            <div class="articleDetail">
+                                <h2>FOR STARTUPS</h2>
+                                <a href="javascript:;" class="button">READ MORE</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- Section4 - END -->
+
+            <!-- Section5 - START -->
+            <section class="slides section5">
+                <div class="lftSec">
+                    <img src="/images/section3-img.jpg" alt="">
+                </div>
+                <div class="rgtSec">
+                    <p class="bigTitle">MAKING
+                        <br> ENTREPRENEURIAL
+                        <br> WAVES AT HOMR AND
+                        <br> AWAY.
+                    </p>
+                    <p class="smallTxt">Lorem has grown from a single gathering in Helsinki to a series of events organized all around the world.
+                        We throw bigger events in Finland, Japan, and China, and smaller get-togethers around the globe,
+                        from Singapore to NYC. Wherever they happen, our events aim at equipping founders to solve the most
+                        meaningful problems of our time.</p>
+                    <a href="javascript:;" class="button">BROWSE OUR EVENTS</a>
+                </div>
+            </section>
+            <!-- Section5 - END -->
+        </div>
+    </div>
+    <hr>
     <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="/js/fullpage.js"></script>
     <script type="text/javascript" src="/js/owl.carousel.js"></script>
+    
     
     <script>
         function imageAssetPath(jD, imgID) {
@@ -115,10 +216,6 @@
         var data = "";
         var newsItemNo = "";
 
-        window.onload = function() {
-            
-        }
-
         data = $.ajax({
             method: "GET",
             url: "https://78nd8rko.api.sanity.io/v1/data/query/production?query=*",
@@ -134,7 +231,7 @@
             if (data.status === 200) {
                 var jsonDataList = data.responseJSON.result;
                 var jsonData = data.responseJSON.result[index];
-                console.log(jsonData);
+                //console.log(jsonData);
                 var nTitle = '';
 
                 if (jsonData._type == 'news') {
@@ -264,10 +361,68 @@
                             }
                         });
                     }
+
+                    /* index page starts */
+
+                    /****************** Section 1 ********************/
+                    document.querySelector(".section1 .lftSec img").setAttribute("src", BimgPa);
+                    document.querySelector(".section1 .rgtSec .smallTxt").getElementsByTagName("span")[0].innerHTML = newsSource;
+                    document.querySelector(".section1 .rgtSec .smallTxt").getElementsByTagName("span")[1].innerHTML = jsonData._updatedAt.split("T")[0];
+                    document.querySelector(".section1 .rgtSec .bigTitle").innerHTML = nTitle;
+                    document.querySelector(".section1 .rgtSec .introCopy").innerHTML = nTitle;
+                    document.querySelector(".section1 .lftSec").style.height = document.querySelector(".section1").clientHeight + "px";
+                    /****************** Section 1 ends ********************/
+
+                    /****************** Section 2 ********************/
+                    document.querySelector(".section2").style.backgroundImage = "url(" + BimgPa + ")";
+                    document.querySelector(".section2 .bigTitle").innerHTML = nTitle;
+                    document.querySelector(".section2 .smallTxt").innerHTML = nTitle;
+                    /****************** Section 2 ends ********************/
+                    
+                    /****************** Section 3 ********************/
+                    document.querySelector(".section3 .rgtSec").style.height = document.querySelector(".section3").clientHeight + "px";
+                    document.querySelector(".section3 .rgtSec img").setAttribute("src", BimgPa);
+                    document.querySelector(".section3 .lftSec .bigTitle").innerHTML = nTitle;
+                    document.querySelector(".section3 .lftSec .smallTxt").innerHTML = nTitle;
+                    /****************** Section 3 ends ********************/
+
+                    /****************** Section 4 ********************/
+                    for(var i=0; i<document.querySelectorAll(".section4 li").length; i++) {
+                        document.querySelectorAll(".section4 li")[i].getElementsByTagName("img")[0].setAttribute("src", BimgPa);
+                        document.querySelectorAll(".section4 li")[i].querySelector(".articleDetail").getElementsByTagName("h2")[0].innerHTML = nTitle;
+                    }
+                    /****************** Section 4 ends ********************/
+
+                    /****************** Section 5 ********************/
+                    document.querySelector(".section5 .lftSec").style.height = document.querySelector(".section5").clientHeight + "px";
+                    document.querySelector(".section5 .lftSec img").setAttribute("src", BimgPa);
+                    document.querySelector(".section5 .rgtSec .bigTitle").innerHTML = nTitle;
+                    document.querySelector(".section5 .rgtSec .smallTxt").innerHTML = nTitle;
+                    /****************** Section 5 ends ********************/
+
+                    /* index page ends */
                 }
             }
         });
     </script>
+    <style>
+        .section1, .section3, .section5 {
+            display: flex;
+        }
+
+        hr {
+            width: 100%;
+            height: 1px;
+        }
+
+        .section2 {
+            background-size: cover;
+        }
+
+        .section3 .lftSec {
+            z-index: 2;
+        }
+    </style>
 </body>
 </html>
 
