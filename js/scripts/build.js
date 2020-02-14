@@ -259,11 +259,11 @@ request({
                                             <p class="sourceName">Source: General Motors</p>
                                         </div>
                                         <div class="rhs">
-                                            <p>SHARE THIS ARTICLE</p>
-                                            <a href="javascript:;"><img class="lazy" data-src="/images/icon-fb.png" alt="Facebook" /></a>
+                                            <p>SHARE THIS ARTICLE</p><div class="addthis_inline_share_toolbox"></div>
+                                            <!--<a href="javascript:;"><img class="lazy" data-src="/images/icon-fb.png" alt="Facebook" /></a>
                                             <a href="javascript:;"><img class="lazy" data-src="/images/icon-linkedin.png" alt="LinkedIn" /></a>
                                             <a href="javascript:;"><img class="lazy" data-src="/images/icon-twitter.png" alt="Twitter" /></a>
-                                            <a href="javascript:;"><img class="lazy" data-src="/images/icon-mail.png" alt="Email" /></a>
+                                            <a href="javascript:;"><img class="lazy" data-src="/images/icon-mail.png" alt="Email" /></a>-->
                                         </div>
                                     </div>
                                     <div class="content">
@@ -286,6 +286,7 @@ request({
                         <script type="text/javascript" src="/js/fullpage.js"></script>
                         <script type="text/javascript" src="/js/owl.carousel.js"></script>
                         <script type="text/javascript" src="/js/common.js"></script>
+                        <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4e6ddfb6421fdbe2"></script> 
                     </body>
 
                     </html>
