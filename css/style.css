@@ -131,10 +131,10 @@ footer, header, hgroup, menu, section, summary, mark {
   width: 100%; }
 
 .fl {
-  float: left !important; }
+  float: left; }
 
 .fr {
-  float: right !important; }
+  float: right; }
 
 input[type=submit], input[type=button], button[type=submit] {
   -webkit-appearance: none;

@@ -1,64 +1,7 @@
 {
-    "ms": 11,
+    "ms": 29,
     "query": "* | order(_createdAt desc)",
     "result": [
-    {
-        "_createdAt": "2020-02-06T13:47:22Z",
-        "_id": "_.listeners.yJjU5IOF3SPlSkRyONpHaR",
-        "_rev": "yJjU5IOF3SPlSkRyONpHYx",
-        "_type": "system.listener",
-        "_updatedAt": "2020-02-06T13:47:22Z",
-        "apiVersion": "1",
-        "claims": "{\"i\":\"pcVHsK1YL\",\"x\":1580998672}",
-        "identity": "pcVHsK1YL",
-        "params":
-        {
-            "draftId": "drafts.55cae12c-8fd2-4416-b013-38a2276035c9",
-            "identity": "pcVHsK1YL",
-            "now": "2020-02-06T13:47:22Z",
-            "publishedId": "55cae12c-8fd2-4416-b013-38a2276035c9"
-        },
-        "pingedAt": "2020-02-06T13:47:22Z",
-        "query": "*[_id == $publishedId || _id == $draftId]",
-        "visibility": "transaction"
-    },
-    {
-        "_createdAt": "2020-02-06T13:47:19Z",
-        "_id": "_.listeners.3lTUM1jwZkjcUPpsR1DF23",
-        "_rev": "3lTUM1jwZkjcUPpsR1DF0e",
-        "_type": "system.listener",
-        "_updatedAt": "2020-02-06T13:47:19Z",
-        "apiVersion": "1",
-        "claims": "{\"i\":\"pcVHsK1YL\",\"x\":1580998669}",
-        "identity": "pcVHsK1YL",
-        "params":
-        {
-            "identity": "pcVHsK1YL",
-            "now": "2020-02-06T13:47:19Z"
-        },
-        "pingedAt": "2020-02-06T13:47:19Z",
-        "query": "*[!(_id in path(\"_.**\"))]",
-        "visibility": "query"
-    },
-    {
-        "_createdAt": "2020-02-06T13:47:18Z",
-        "_id": "_.listeners.zBy1iSK4GIKqlMYfQFa1dJ",
-        "_rev": "zBy1iSK4GIKqlMYfQFa1bD",
-        "_type": "system.listener",
-        "_updatedAt": "2020-02-06T13:47:18Z",
-        "apiVersion": "1",
-        "claims": "{\"i\":\"pcVHsK1YL\",\"x\":1580998667}",
-        "identity": "pcVHsK1YL",
-        "params":
-        {
-            "identity": "pcVHsK1YL",
-            "now": "2020-02-06T13:47:18Z",
-            "type": "news"
-        },
-        "pingedAt": "2020-02-06T13:47:18Z",
-        "query": "*[_type == $type] | order(_createdAt desc) [0...50000] {_id, _type}",
-        "visibility": "query"
-    },
     {
         "_createdAt": "2020-02-06T08:03:18Z",
         "_id": "cfc7ff16-c1e0-410f-9942-e51c73589236",
@@ -962,9 +905,9 @@
     {
         "_createdAt": "2020-02-05T11:43:29Z",
         "_id": "55cae12c-8fd2-4416-b013-38a2276035c9",
-        "_rev": "3lTUM1jwZkjcUPpsQxdErG",
+        "_rev": "FhOR1APgGFNpD0JHgZFY4h",
         "_type": "news",
-        "_updatedAt": "2020-02-05T12:48:14Z",
+        "_updatedAt": "2020-02-14T11:42:19Z",
         "author":
         {
             "_ref": "93ab3dba-5535-4104-a6d5-f99ab539e16f",
@@ -1233,6 +1176,11 @@
                 "_ref": "image-87f383e0f68df54f673b6ce3cfbb1f6a6ab2ff43-2896x1944-jpg",
                 "_type": "reference"
             }
+        },
+        {
+            "_key": "782fbcda5703",
+            "_type": "youtube",
+            "url": "https://youtu.be/15wkETnhDAI"
         }],
         "metaDescription": "0 I want to work it out0 I want to work it out0 I want to work it out0 I want to work it out0 I want to work it out0 I want to work it out0 I want to work it out0 I want to work it out",
         "metaImage":
