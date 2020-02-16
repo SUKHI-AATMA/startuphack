@@ -2,7 +2,7 @@
   "name": "startuphack",
   "description": "",
   "scripts": {
-    "build": "node ./js/scripts/build"
+    "build": "node ./build"
   },
   "keywords": [],
   "author": "",
