@@ -1,7 +1,7 @@
 const fse = require('fs-extra');
 var request = require("request");
 
-const distPath = '/news';
+const distPath = '../../news';
 
 var apiNews = 'https://78nd8rko.api.sanity.io/v1/data/query/production?query=*[_type == "news"] | order(_createdAt desc)';
 var apiAll = 'https://78nd8rko.api.sanity.io/v1/data/query/production?query=* | order(_createdAt desc)';
